@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "OpenSub Live - Media Buffer Tap",
+  "version": "1.0.0",
+  "description": "Intercepts ahead-of-time streaming audio from web videos for zero-latency movie subtitles in OpenSub Live.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["mse_hook.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    }
+  ]
+}
